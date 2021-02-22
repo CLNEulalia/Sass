@@ -83,7 +83,7 @@ Sass is watching for changes. Press Ctrl-C to stop.
 
 <details><summary>Expected File Structure</summary><p>
 
-![](https://i.imgur.com/LTc8r5T.png)
+![](https://i.imgur.com/FMnwhln.png)
 	
 </p></details>
 <br>
@@ -128,7 +128,7 @@ Have you ever wished for errors in css? Look no further, Sass will give you erro
 
 Check out this one that I got, for example
 
-![Sass error](https://i.imgur.com/dOcRLUz.png)
+![Sass error](https://i.imgur.com/0xF5cvL.png)
 
 - Go ahead and mistype something in `main.scss` save it and reload your browser
 - Fix it, save it, reload it!
