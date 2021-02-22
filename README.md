@@ -282,7 +282,7 @@ Fantastic! Now let's add our new fonts!
 
 ```
 button {
-  font-family: "Speck";
+  font-family: "calc";
 }
 ```
 
