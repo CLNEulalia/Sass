@@ -154,7 +154,7 @@ $color-red    : #F1534E;
 Now let's apply our $sg-red color to the background of all the buttons and change the text color to $sg-white
 
 ```
-buttons {
+button {
   background-color : $color-red;
   color            : $color-white;
 }
