@@ -39,9 +39,30 @@ Sass used to only be installable via Ruby, but the times have changed drasticall
 
 #### IMPORTANT! File organization matters! Make sure you are working in the correct file/folder/building your files in the correct location
 
+## Sass & Grid Calculator
+
+### Setup
+
+1. In today's `student_labs` directory `mkdir sass_grid_calc`
+1. cd `sass_grid_calc`
+1. `mkdir css`
+1. `touch index.html`
+1. `touch css/main.scss css/main.css`
+1. _Dont forget to run your sass --watch command to complile your sass into css!_
+
+### Build
+
+1. Find any calculator you would like to mock up or you may make one from scratch.
+1. You must use Sass and CSS Grid to style your calculator.
+
+### HFM
+
+1. Give your calculator some functionality!
+
 #### In terminal 
 
- - Make sure you are in today's `morning_exercise/starter-code`, on the same level as the `index.html` file.
+ - Fork and git clone this repo and `cd` into `sass`, make sure you're on the same level as the `index.html` file.
+ - `mkdir css` to create a css directory. 
  - `touch css/main.scss` to create a `.scss` file inside the `css` folder
  - Open a new terminal tab at this level and type:
  - `sass --watch css/main.scss css/main.css`
@@ -60,7 +81,7 @@ Sass is watching for changes. Press Ctrl-C to stop.
 
 #### Set up our workspace and check our files 
 
- - Go back to your other tab in terminal (don't cancel the `sass --watch`, we always want that to be running when we write sass) and `atom .` the entire `starter-code` folder
+ - Go back to your other tab in terminal (don't cancel the `sass --watch`, we always want that to be running when we write sass) and `code .` the entire `sass` folder
  - You should now see some new files/folders
   - Folder: ` .sass-cache`
   - Inside the `css` folder there should now be
@@ -428,26 +449,3 @@ From the Sass Docs:
 }
 ```
 [Learn more](https://sass-lang.com/documentation/values/functions)
-
-
-
-
-## Sass & Grid Calculator
-
-### Setup
-
-1. In today's `student_labs` directory `mkdir sass_grid_calc`
-1. cd `sass_grid_calc`
-1. `mkdir css`
-1. `touch index.html`
-1. `touch css/main.scss css/main.css`
-1. _Dont forget to run your sass --watch command to complile your sass into css!_
-
-### Build
-
-1. Find any calculator you would like to mock up or you may make one from scratch.
-1. You must use Sass and CSS Grid to style your calculator.
-
-### HFM
-
-1. Give your calculator some functionality!
