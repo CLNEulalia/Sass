@@ -266,23 +266,14 @@ CSS has an @import feature. But each @import is another get request to the serve
 - `touch _fonts.scss`
 
 *In vscode, open the `_fonts.scss` file*
-- Let's bring in some fonts from our `assets` folder
+- Let's bring in the calculator font
 
 ```
 @font-face {
-  font-family: "Afta-Sans";
-  src: url("../assets/fonts/afta-sans/AftaSansThin-Regular.otf") format("truetype");
+  font-family: 'calc';
+  src: url('../calculator.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: "Chunk";
-  src: url("../assets/fonts/ChunkFive/Chunkfive.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Speck';
-  src: url("../assets/fonts/Speck-Display.otf") format('truetype');
-}
 ```
 *In `main.scss`: put the following with the other `@import`*
 - `@import "fonts";`
@@ -291,7 +282,7 @@ CSS has an @import feature. But each @import is another get request to the serve
 
 Fantastic! Now let's add our new fonts!
 
-- update the button font and center it
+- update the button font
 
 ```
 button {
