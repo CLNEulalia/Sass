@@ -37,7 +37,7 @@ Sass used to only be installable via Ruby, but the times have changed drasticall
 
 ### Set up Sass with the Morning Exercise Project
 
-#### IMPORTANT! File organization matters! Make sure you are working in the correct file/folder/building your files in the correct location
+#### IMPORTANT! File organization matters! Make sure you are working in the correct location
 
 ## Sass & Grid Calculator
 
