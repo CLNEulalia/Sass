@@ -41,25 +41,16 @@ Sass used to only be installable via Ruby, but the times have changed drasticall
 
 ## Sass & Grid Calculator
 
-### Setup
-
-1. In today's `student_labs` directory `mkdir sass_grid_calc`
-1. cd `sass_grid_calc`
-1. `mkdir css`
-1. `touch index.html`
-1. `touch css/main.scss css/main.css`
-1. _Dont forget to run your sass --watch command to complile your sass into css!_
-
 ### Build
 
-1. Find any calculator you would like to mock up or you may make one from scratch.
-1. You must use Sass and CSS Grid to style your calculator.
+1. Find any calculator you would like to mock up or you may make one from scratch. (Feel free to use the index.html file as a template)
+1. You must use Sass to style your calculator.
 
-### HFM
+### Bonus
 
 1. Give your calculator some functionality!
 
-#### In terminal 
+#### Setup In terminal 
 
  - Fork and git clone this repo and `cd` into `sass`, make sure you're on the same level as the `index.html` file.
  - `mkdir css` to create a css directory. 
@@ -88,8 +79,7 @@ Sass is watching for changes. Press Ctrl-C to stop.
     - `main.css`
     - `main.css.map`
     - `main.scss` 
-    - `_finishing_touches.scss`
-- `open index.html` 
+- `open index.html` to view the html file in the browser.
 
 <details><summary>Expected File Structure</summary><p>
 
@@ -104,28 +94,29 @@ Sass is watching for changes. Press Ctrl-C to stop.
 
 ### First, let's investigate how it works 
 
-Let's start small so we can see how Sass compiles .scss into .css. If we look at our index, we can see that the Space Ghost image is far too large. That's simple enough to fix, so let's start there.
+Let's start small so we can see how Sass compiles .scss into .css. If we look at our index, we can see that all the buttons are in a line to the left of the screen
 
-##### In Atom, in the `main.scss` file:
+##### In VSCode, in the `main.scss` file:
 
 ```
-img {
-  width: 100px;
+.container {
+  border: 1px solid gold;
 }
 ```
 - `⌘S` to save the file
 
-##### In Atom, open `main.css`. It should look like this:
+##### In VSCode, open `main.css`. It should look like this:
 
 ```
-img {
-  width: 100px; }
+.container {
+  border: 1px solid gold;
+}
 
 /*# sourceMappingURL=main.css.map */
 
 ```
 
-Refresh the index in the browser, Space Ghost should've shrunk!
+Refresh the index in the browser, the calculator container should have a gold border!
 
 *Note:*  Everything in the `main.css` file should be compiled from `main.scss`, meaning **do not write directly into `main.css`.** Whenever you make a change and save it in your `.scss` file, sass will compile the _whole_ file into the `.css` file. So, any code you directly write into `main.css` would then be **overwritten** after the compilation. You wouldn't want that! So, again, when using sass, do **not** write directly into your regular css files! 
 
@@ -150,7 +141,7 @@ CSS has since introduced variables as you've learned so far, but in case you hat
 
 Let's set some color variables. Space Ghost's color scheme is fantastic - let's be sure we can easily reuse those colors
 
-**In atom, in `main.scss`, starting on line 1 add:**
+**In VSCode, in `main.scss`, starting on line 1 add:**
 
 ```
 $sg-grey   : gainsboro;
@@ -160,12 +151,12 @@ $sg-yellow : #FFCF73;
 $sg-red    : #F1534E;
 ```
 
-Now let's apply our $sg-black color to all the text and set a background color of `$sg-grey`
+Now let's apply our $sg-red color to all the buttons
 
 ```
-body {
-  background-color : $sg-grey;
-  color            : $sg-black;
+buttons {
+  background-color : $sg-red;
+  color            : $sg-white;
 }
 
 ```
@@ -179,11 +170,8 @@ Yes, it's true! SCSS has funcitons. You can use some built in ones or write your
 Let's set up the container div first. We'll make it a flex container and let's just quickly change the color so we can see our div.
 
 ```
-.featured {
-  display: flex;
-  width : 98%;
-  margin : auto;
-  justify-content: space-around;
+.container {
+  border: 1px solid gold;
   background-color : darken($sg-grey, 30%);
 }
 
@@ -191,12 +179,12 @@ Let's set up the container div first. We'll make it a flex container and let's j
 
 ### Nesting
 
-Additionally, we're going to want our beef log and cheese log featured product divs to have the same width. Do we want 50%? 45%? 30%? Oh gosh! We just don't know yet! Let's set it to a variable we can change.
+Additionally, we're going to want our calculator buttons to have the same width. Do we want 50%? 45%? 30%? Oh gosh! We just don't know yet! Let's set it to a variable we can change.
 
 Put it at the top, with our other variables
 
 ```
-$featured-content-width: 35%;
+$button-width: 20%;
 ```
 
 Our beef log and cheese log divs are inside the `.featured` div - there are a few ways we access this in regular css. Some more verbose than others. Some more readable than others.
@@ -211,48 +199,40 @@ First, let's add a border to see what our elements look like (feel free to chang
 }
 ```
 
-Now let's target our divs inside .featured
+Now let's target our buttons inside .calculator
 
 ```
-.featured {
-  display: flex;
-  width : 98%;
-  margin : auto;
-  justify-content: space-around;
-  background-color : darken($sg-grey, 30%);
+.container {
+    border: 1px solid gold;
+    background-color : darken($sg-grey, 20%);
 
-  div {
-    width : $featured-content-width;
-  }
+    button {
+        background-color: $sg-red;
+        width: $button-width;
+    }  
 }
 
 ```
 
-Let's refresh our browser to see the changes
+Neato! We did a lot of CSS and kept it organized and DRY!
 
-Maybe, that's a bit narrow for our divs. Let's update our variable
 
-```
-$featured-content-width: 40%;
-```
+## You Do (breakout rooms)
+#### Finish styling your calculator :) 
 
-Neato!
 
-### Extend/Inherit
+## Hungry for More
 
-Our beef log and cheese log divs are going to be similar in a lot of ways, but we want them to be a little different too.
+### A few more cool Sass features: 
+### Explore Extend/Inherit
 
 We can write some nice DRY css code by using extend/inheritance.
 
 Let's write the shared properties
 
 ```
-.featured-content {
-  border: 1px solid rgba (200, 200, 200, .5);
-  box-shadow: 0 0 8px silver;
-  background-color: lighten($sg-grey, 50%);
-  text-align: center;
-  padding: .5em;
+.screen:hover {
+  background-color: lighten($sg-yellow, 5%)
 }
 
 ```
@@ -263,40 +243,18 @@ Let's write the shared properties
 Let's give these properties to the beef-log div
 
 ```
-.beef-log {
-  @extend .featured-content;
+.button:hover {
+  @extend .screen;
 }
 
 ```
 
-- refresh your browser and you should see just the beef-log div has changed
+- refresh your browser and you should see the button on hover has changed
 
-Now, let's give the same properties to the cheese log div
-
-```
-.cheese-log {
-  @extend .featured-content;
-}
-```
-
-Let's make the Beef Log and Cheese Log divs look different
-
-```
-.beef-log {
-  @extend .featured-content;
-  color : $sg-red;
-}
-
-.cheese-log {
-  @extend .featured-content;
-  color: $sg-yellow;
-}
-
-```
 
 Nice work!
 
-### Import/Partials
+### Explore Import/Partials
 
 Modularizing your CSS has many benefits. It helps organize code and it can allow teammates to work in different files.
 
@@ -369,27 +327,6 @@ h1 {
   }
 }
 ```
-
-#### Adding another partial!
-
-- Let's make our page a little more refined
-- comment out or remove
-```
-* {
-  border: 1px solid gold;
-}
-```
-
-- After the other `@import`s
-- `@import "finishing_touches";`
-
-Fantastic! We did a lot of CSS and kept it organized and DRY!
-
-## Hungry for More
-
-### Keep on using Sass to update this page more
-- You can remove the `finishing_touches` partial and work on your own finishing touches
-- Or build on top of the `finishing_touches` partial - warning - that file has some naughty worst practices in there - you may want to check it out/rewrite it/ first
 
 ### Explore Mixins
 
