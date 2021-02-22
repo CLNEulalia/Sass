@@ -139,7 +139,7 @@ Check out this one that I got, for example
 
 CSS has since introduced variables as you've learned so far, but in case you hate writing the `var(--` opening every time, Sass has its own, slightly shorter variable functionality as well.
 
-Let's set some color variables. Space Ghost's color scheme is fantastic - let's be sure we can easily reuse those colors
+Let's set some color variables. 
 
 **In VSCode, in `main.scss`, starting on line 1 add:**
 
@@ -151,7 +151,7 @@ $sg-yellow : #FFCF73;
 $sg-red    : #F1534E;
 ```
 
-Now let's apply our $sg-red color to all the buttons
+Now let's apply our $sg-red color to the background of all the buttons and change the text color to $sg-white
 
 ```
 buttons {
@@ -199,7 +199,7 @@ First, let's add a border to see what our elements look like (feel free to chang
 }
 ```
 
-Now let's target our buttons inside .calculator
+Now let's target our buttons inside .container by placing the button styling inside .container's {}
 
 ```
 .container {
@@ -265,7 +265,7 @@ CSS has an @import feature. But each @import is another get request to the serve
 *In terminal, in the `css` directory:*
 - `touch _fonts.scss`
 
-*In atom, open the `_fonts.scss` file*
+*In vscode, open the `_fonts.scss` file*
 - Let's bring in some fonts from our `assets` folder
 
 ```
@@ -291,42 +291,14 @@ CSS has an @import feature. But each @import is another get request to the serve
 
 Fantastic! Now let's add our new fonts!
 
-- update the body font:
+- update the button font and center it
 
 ```
-body {
-  font-family      : "Afta-Sans";
-  background-color : $sg-grey;
-  color            : $sg-black;
+button {
+  font-family: "Speck";
 }
 ```
-- update the h1 font and center it
 
-```
-h1 {
-	font-family: "Speck";
-  text-align : center;
-}
-```
-- update the h3 font inside the `.featured` div
-
-```
-.featured {
-  display: flex;
-  width : 98%;
-  margin : auto;
-  justify-content: space-around;
-  background-color : darken($sg-grey, 30%);
-
-  div {
-    width : $featured-content-width;
-  }
-
-  h3 {
-    font-family: "Chunk";
-  }
-}
-```
 
 ### Explore Mixins
 
@@ -336,46 +308,7 @@ Mixins are similar to @expand. However, they can take arguments.
 
 The short version of good practices of when to use @expand and when to use @mixin: @expand should be used for related elements (similar divs in a container). @mixns should be used for unrelated elements, for example, a header and a button or if you would like to pass an argument(s). [More info](https://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
 
-Inside `_finishing_touches.scss` You'll find a mixin at the bottom:
 
-```
-@mixin float( $translate ){
-  0% {
-      transform: translate(0px);
-  }
-  20% {
-    transform: translate($translate , -$translate ) scale(1.01) ;
-  }
-  40% {
-    transform: translate(- $translate , - $translate ) scale(.99);
-  }
-  60% {
-    transform: translate ( 0px  ,  $translate ) ;
-  }
-  80% {
-    transform: translate( - $translate , 0px ) scale(.99);
-  }
-  100% {
-    transform: translate(- $translate, - $translate ) ;
-  }
-}
-
-```
-As you can see, these are properties of an `@keyframes`.
-
-By passing in a variable, it can be customized for different elements.
-
-In this case, I have used this to give the h1 a floating in space animation moving 14 pixels. The buttons will also float, but only on a hover, and only 2px.
-
-```
-@keyframes float {
-  @include float( 14px )
-}
-
-@keyframes float-button {
-  @include float ( 2px )
-}
-```
 ### Write Your Own Sass Function
 You can create your own functions!
 
