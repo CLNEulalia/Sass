@@ -73,13 +73,11 @@ Sass is watching for changes. Press Ctrl-C to stop.
 #### Set up our workspace and check our files 
 
  - Go back to your other tab in terminal (don't cancel the `sass --watch`, we always want that to be running when we write sass) and `code .` the entire `sass` folder
- - You should now see some new files/folders
-  - Folder: ` .sass-cache`
-  - Inside the `css` folder there should now be
+  - You should now see some new files inside the `css` folder 
     - `main.css`
     - `main.css.map`
     - `main.scss` 
-- `open index.html` to view the html file in the browser.
+- In terminal `open index.html` to view the html file in the browser.
 
 <details><summary>Expected File Structure</summary><p>
 
