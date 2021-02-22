@@ -144,19 +144,19 @@ Let's set some color variables.
 **In VSCode, in `main.scss`, starting on line 1 add:**
 
 ```
-$sg-grey   : gainsboro;
-$sg-black  : #515358;
-$sg-white  : #FCFCFC;
-$sg-yellow : #FFCF73;
-$sg-red    : #F1534E;
+$color-grey   : gainsboro;
+$color-black  : #515358;
+$color-white  : #FCFCFC;
+$color-yellow : #FFCF73;
+$color-red    : #F1534E;
 ```
 
 Now let's apply our $sg-red color to the background of all the buttons and change the text color to $sg-white
 
 ```
 buttons {
-  background-color : $sg-red;
-  color            : $sg-white;
+  background-color : $color-red;
+  color            : $color-white;
 }
 
 ```
@@ -172,7 +172,7 @@ Let's set up the container div first. We'll make it a flex container and let's j
 ```
 .container {
   border: 1px solid gold;
-  background-color : darken($sg-grey, 30%);
+  background-color : darken($color-grey, 30%);
 }
 
 ```
@@ -204,10 +204,10 @@ Now let's target our buttons inside .container by placing the button styling ins
 ```
 .container {
     border: 1px solid gold;
-    background-color : darken($sg-grey, 20%);
+    background-color : darken($color-grey, 20%);
 
     button {
-        background-color: $sg-red;
+        background-color: $color-red;
         width: $button-width;
     }  
 }
@@ -232,7 +232,7 @@ Let's write the shared properties
 
 ```
 .screen:hover {
-  background-color: lighten($sg-yellow, 5%)
+  background-color: lighten($color-yellow, 5%)
 }
 
 ```
