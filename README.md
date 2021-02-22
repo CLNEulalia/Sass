@@ -44,7 +44,7 @@ Sass used to only be installable via Ruby, but the times have changed drasticall
 ### Build
 
 1. Find any calculator you would like to mock up or you may make one from scratch. (Feel free to use the index.html file as a template)
-1. You must use Sass to style your calculator.
+1. You must use Sass and grid to style your calculator.
 
 ### Bonus
 
