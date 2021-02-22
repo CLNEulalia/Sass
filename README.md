@@ -149,7 +149,7 @@ $color-yellow : #FFCF73;
 $color-red    : #F1534E;
 ```
 
-Now let's apply our $sg-red color to the background of all the buttons and change the text color to $sg-white
+Now let's apply our $color-red color to the background of all the buttons and change the text color to $color-white
 
 ```
 button {
@@ -165,7 +165,7 @@ Save the file and reload the browser. Ta-da! Regular CSS variables still work ju
 
 Yes, it's true! SCSS has funcitons. You can use some built in ones or write your own! We could probably spend days learning about all the awesome stuff about Sass. But for today we will just use the `ligthen()` and `darken()` functions, which allow us to lighten and darken colors on the fly!
 
-Let's set up the container div first. We'll make it a flex container and let's just quickly change the color so we can see our div.
+Let's set up the container div first. Let's just quickly change the color so we can see our div.
 
 ```
 .container {
@@ -185,9 +185,7 @@ Put it at the top, with our other variables
 $button-width: 20%;
 ```
 
-Our beef log and cheese log divs are inside the `.featured` div - there are a few ways we access this in regular css. Some more verbose than others. Some more readable than others.
-
-But with Sass we can nest it! Writing it this way can be more readable and maintainable.
+Our buttons are within our .container div we can access all of them by nesting the styling for the button element inside the .container styling. Writing it this way can be more readable and maintainable.
 
 First, let's add a border to see what our elements look like (feel free to change the border color to whatever works for. you, we'll just be using it for testing):
 
